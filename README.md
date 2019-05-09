@@ -1,29 +1,7 @@
 # vue-leaflet-hotline-playground
 
-## Project setup
-```
-yarn install
-```
+Tom Needham - 09/05/2019
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+An example of vue, with leaflet.js and the leaflet-hotline plugin.
 
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Build with `yarn`, run with `yarn serve`
