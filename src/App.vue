@@ -10,7 +10,8 @@
       @update:bounds="boundsUpdated"
       >
         <l-tile-layer :url="url"></l-tile-layer>
-        <v-hotline :latlngs="latLngArray" :min="minValue" :max="maxValue"></v-hotline>
+        <v-locatecontrol/>
+        <LHotline min=2 max=20 :latLngs="latLngArray"></LHotline>
       </l-map>
     </div>
   </div>
@@ -18,15 +19,19 @@
 
 <script>
 
+import L from 'leaflet'
 import { LMap, LTileLayer } from 'vue2-leaflet'
-import Vue2LeafletHotline from 'vue2-leaflet-hotline'
+import Vue2LeafletLocatecontrol from 'vue2-leaflet-locatecontrol'
+
+import LHotline from './components/Hotline.vue'
 
 export default {
   name: 'app',
   components: {
     'l-map': LMap,
     'l-tile-layer': LTileLayer,
-    'v-hotline': Vue2LeafletHotline
+    'v-locatecontrol': Vue2LeafletLocatecontrol,
+    LHotline
   },
   data () {
     return {
@@ -34,7 +39,7 @@ export default {
       zoom: 3,
       center: [47.413220, -1.219482],
       bounds: null,
-      latLngArray: [[47.413220, -1.219482, 2], [47.413230, -1.219492, 2]]
+      latLngArray: [[47.413220, -1.219482, 2], [47.413250, -1.119692, 20]]
     };
   },
   methods: {
@@ -50,3 +55,8 @@ export default {
   }
 }
 </script>
+
+<style>
+@import "~leaflet/dist/leaflet.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+</style>
